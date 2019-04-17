@@ -93,6 +93,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     droite
+                    <div>
+                        <a href="{{ route('all_assignment') }}"><input type="button" value="rafraîchir"></a>
+                    </div>
                 </div>
                 <div class="panel-body">
                     Body panel
