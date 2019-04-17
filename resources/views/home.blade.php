@@ -6,7 +6,7 @@
 
     <div class="row">
         {{-- row Gauche --}}
-        <div class="card col-md-6">
+        <div class="card col-md-5">
             <div class="card-body">
                 <div class="card-title">
                     Créer un nouvelle utilisateur
@@ -96,18 +96,22 @@
                 </div>
 
             {{-- Fin row Gauche --}}
-            </div>
+        </div>
+
+        {{-- èspace entre GAUCHE/DROITE --}}
+        <div class="card col-md-1">
+        </div>
 
         {{-- row Droite --}}
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+        <div class="card col-md-6">
+            <div class="card-body">
+                <div class="card-title">
                     droite
                     <div>
                         <a href="{{ route('all_assignment') }}"><input type="button" value="rafraîchir"></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-text">
                     Body panel
                     <table>
                         <thead>
