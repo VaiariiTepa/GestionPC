@@ -132,7 +132,7 @@ class ComputerassignmentController extends Controller
         $all_computer = Computer::all();
         $computerassignment = $this->all_assignment();
 
-        return redirect('all_assignment');
+        return redirect('home/all_assignment');
 
     }
 
