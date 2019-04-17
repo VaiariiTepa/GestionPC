@@ -47,4 +47,5 @@ class VisitorController extends Controller
         return redirect()->route('all_assignment');
     }
 
+
 }
