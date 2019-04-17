@@ -27,7 +27,7 @@ Route::post('/home/computerassignment', 'ComputerassignmentController@create')->
 Route::get('/home/all_assignment', 'ComputerassignmentController@all_assignment')->name('all_assignment');
 
 //Annule l'ordinateur attribuer a un Visiteur
-Route::get('home/{computerassignment_id}/delete', 'ComputerassignmentController@cancel');
+Route::get('home/{computerassignment_id}/cancel', 'ComputerassignmentController@cancel');
 
 //Ajax
 Route::post('/home/id_computer', 'ComputerassignmentController@get_hours');
