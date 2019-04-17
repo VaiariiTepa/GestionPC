@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Formulaire --création
+Route::post('/home', 'VisitorController@create')->name('create_user');
+Route::post('/home/computerassignment', 'ComputerassignmentController@create')->name('computerassignment');
+
+//Ajax
+Route::post('/home/id_computer', 'ComputerassignmentController@get_hours');
