@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+
+use App\Computerassignment;
+use App\Visitor;
+use App\Computer;
 
 class HomeController extends Controller
 {
