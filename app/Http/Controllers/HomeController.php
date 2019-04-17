@@ -35,8 +35,6 @@ class HomeController extends Controller
         $computer = new Computer();
         $c = $computer->all();
 
-        $computerassignment = Route::get('all_assignment');
-
         //récupère les assignment
         $computerassignment = Computerassignment::all_assignment();
         return view('home')->with([
