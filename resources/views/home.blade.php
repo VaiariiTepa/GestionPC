@@ -148,7 +148,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <input type="submit" class="btn btn-warning" value="annuler">
+                                            <a href="home/{{$ca->id}}/delete" button class="btn btn-danger btn-small btn-delete">Annuler</a>
                                         </td>
                                     </tr>
                                 @endforeach
