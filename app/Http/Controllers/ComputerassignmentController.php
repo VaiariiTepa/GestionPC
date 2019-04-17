@@ -28,10 +28,6 @@ class ComputerassignmentController extends Controller
 
         $input = $request->all();
 
-        $assignment = new Computerassignment();
-        $assignment ->visitor_id = $input['id_visitor'];
-        $assignment ->computer_id = $input['id_computer'];
-
         //retire le "H" de l'heure
         $hours_trimmed = str_replace("h", "", $input['hours']);
 
@@ -54,13 +50,27 @@ class ComputerassignmentController extends Controller
         //additionne l'heure de début+temps d'attribution
         $finish_hours = $hours_trimmed + $range_hours;
 
-        $assignment ->open = $hours_trimmed;
-        $assignment ->close = $finish_hours;
+        //verifie la disponibilité du crénaux horaire choisie
+        $all_computerassignment = Computerassignment::all();
 
-        //enregistrement dans la DB
-        $assignment ->save();
+        foreach($all_computerassignment as $computerassignment){
 
-        return redirect()->route('all_assignment');
+            //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
+            if (($finish_hours < $computerassignment['open'])&&($finish_hours > $computerassignment['close'])) {
+
+                $assignment = new Computerassignment();
+                $assignment ->visitor_id = $input['id_visitor'];
+                $assignment ->computer_id = $input['id_computer'];
+                $assignment ->open = $hours_trimmed;
+                $assignment ->close = $finish_hours;
+
+                //enregistrement dans la DB
+                $assignment ->save();
+                return redirect()->route('all_assignment');
+            }else {
+                return redirect()->route('all_assignment');
+            }
+        }
     }
 
 
@@ -124,6 +134,7 @@ class ComputerassignmentController extends Controller
      * Supprime l'ordinateur qui a été attribuer
      */
     public function cancel($computerassignment_id){
+
         $assignments = Computerassignment::find($computerassignment_id);
         $assignments ->delete();
 
