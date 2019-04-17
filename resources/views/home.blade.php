@@ -61,7 +61,7 @@
                                         {{-- affichage Ordinateur --}}
                                         <select name="id_computer" id="id_computer">
                                             @foreach ($computer as $c)
-                                                <option value="{{$c->ref}}">
+                                                <option value="{{$c->id}}">
                                                     {{$c->ref}}
                                                 </option>
                                             @endforeach
