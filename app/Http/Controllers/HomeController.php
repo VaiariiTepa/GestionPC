@@ -40,7 +40,7 @@ class HomeController extends Controller
         //     'computerassignment'=>$computerassignment,
         //     ]);
 
-        return redirect()->route('/home/get_computerassignment');
+        return redirect()->route('get_computerassignment');
 
     }
 
