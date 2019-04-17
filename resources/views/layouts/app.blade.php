@@ -111,7 +111,7 @@
             //au changement du range_hours
             $('#range_hours').on('change',function(){
 
-                $('#screener_range_hours').remove();
+                // $('#screener_range_hours').remove();
                 $('#hidden_range_hours').remove();
 
                 //récupère le temps choisie avec le range
