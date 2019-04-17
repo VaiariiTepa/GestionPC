@@ -54,7 +54,7 @@ class ComputerassignmentController extends Controller
         $all_computerassignment = $this->all_assignment();
 
         // var_dump($all_computerassignment);
-        if (isset($all_computerassignment)){
+        if (empty($all_computerassignment)){
             foreach($all_computerassignment as $key=>$computerassignment){
 
                 //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
