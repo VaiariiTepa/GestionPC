@@ -119,4 +119,27 @@ class ComputerassignmentController extends Controller
             ]);
     }
 
+    /**
+     * Supprime l'ordinateur qui a été attribuer
+     */
+    public function cancel($computerassignment_id){
+        $assignments = Computerassignment::find($computerassignment_id);
+        $assignments ->delete();
+
+        //récupère les visiteurs/ordinateurs/assignment
+        $all_visitor = Visitor::all();
+        $all_computer = Computer::all();
+        $computerassignment = $this->all_assignment();
+
+        return view('home')->with([
+            'computerassignment'=>$computerassignment,
+            'visitor'=>$all_visitor,
+            'computer'=>$all_computer,
+            ]);
+
+    }
+
+
+
+
 }
