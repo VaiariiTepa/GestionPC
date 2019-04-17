@@ -111,7 +111,7 @@
             //au changement du range_hours
             $('#range_hours').on('change',function(){
 
-                // $('#screener_range_hours').remove();
+                $('#screener_range_hours').remove();
                 $('#hidden_range_hours').remove();
 
                 //récupère le temps choisie avec le range
@@ -158,7 +158,7 @@
 
             //affiche le temps selectionner
             function screen_range_hours(range_hours){
-                $('#screen_range_hours').remove();
+
                 if(range_hours < 60){
 
                     $('#screen_range_hours').append('<input type="hidden" id="hidden_range_hours" name="range_hours" value="'+range_hours+'">');
