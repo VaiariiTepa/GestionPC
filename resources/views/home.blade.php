@@ -38,8 +38,8 @@
                     </form>
                 </div>
             </div>
-
-
+        </div>
+        <div class="card col-md-6">
             <div class="card-body">
                 <div class="card-title">Attribution d'un Poste</div>
                     <div class="card-text">
@@ -77,10 +77,10 @@
                                         Heures début
                                         <input type="text" class="form-control" name="hours" value="7h00" id="input_hours" placeholder="00h00">
                                     </div>
-                                    <div class="form-group col-md-3">
-                                        <div class="form-group col-md-2">durée</div>
+                                    <div class="row col-md-3">
+                                        <div class="form-group col-md-12">durée</div>
                                         <br>
-                                        <div class="form-group col-md-1" id="screen_range_hours"></div>
+                                        <div class="form-group col-md-12" id="screen_range_hours"></div>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <p>choisir une durée</p>
