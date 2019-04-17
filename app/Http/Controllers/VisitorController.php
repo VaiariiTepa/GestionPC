@@ -44,7 +44,7 @@ class VisitorController extends Controller
         $visitor ->email = $input['email'];
 
         $visitor ->save();
-        return redirect()->route('home');
+        return redirect()->route('all_assignment');
     }
 
 }

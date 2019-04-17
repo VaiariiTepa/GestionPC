@@ -60,8 +60,11 @@ class ComputerassignmentController extends Controller
         //enregistrement dans la DB
         $assignment ->save();
 
-        return redirect()->route('home');
+        return redirect()->route('all_assignment');
     }
+
+
+
 
     /**
      * //Ajax -- récupère les heures d'attribution succèptible d'être disponible
