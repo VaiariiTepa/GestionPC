@@ -18,13 +18,13 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
 
-                                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firtname">
+                                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Prénom">
                             </div>
                             <div class="form-group col-md-4">
-                                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname">
+                                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Nom">
                             </div>
                             <div class="form-group col-md-4">
-                                <input type="text" class="form-control" name="numberphone" id="numberphone" placeholder="number phone">
+                                <input type="text" class="form-control" name="numberphone" id="numberphone" placeholder="numéros téléphone">
                             </div>
                         </div>
                         <div class="form-row">
