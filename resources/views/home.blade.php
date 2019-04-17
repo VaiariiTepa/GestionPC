@@ -131,28 +131,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($computerassignment as $ca)
-                                <tr>
-                                    <td>
-                                        {{$ca->firstname}}
-                                    </td>
-                                    <td>
-                                        {{$ca->lastname}}
-                                    </td>
-                                    <td>
-                                        {{$ca->ref}}
-                                    </td>
-                                    <td>
-                                        {{$ca->open}}
-                                    </td>
-                                    <td>
-                                        {{$ca->close}}
-                                    </td>
-                                    <td>
-                                        <input type="submit" value="annuler">
-                                    </td>
-                                </tr>
-                            @endforeach
+                            @if ($computerassignment)
+                                @foreach ($computerassignment as $ca)
+                                    <tr>
+                                        <td>
+                                            {{$ca->firstname}}
+                                        </td>
+                                        <td>
+                                            {{$ca->lastname}}
+                                        </td>
+                                        <td>
+                                            {{$ca->ref}}
+                                        </td>
+                                        <td>
+                                            {{$ca->open}}
+                                        </td>
+                                        <td>
+                                            {{$ca->close}}
+                                        </td>
+                                        <td>
+                                            <input type="submit" value="annuler">
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
