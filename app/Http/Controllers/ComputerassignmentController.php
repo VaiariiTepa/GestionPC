@@ -93,6 +93,7 @@ class ComputerassignmentController extends Controller
 
     }
 
+
     /**
      * Récupère les attribution d'ordinateur
      */
