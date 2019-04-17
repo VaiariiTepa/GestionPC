@@ -9,7 +9,7 @@
         <div class="card col-md-5">
             <div class="card-body">
                 <div class="card-title">
-                    Créer un nouvelle utilisateur
+                    <h3>Créer un nouvelle utilisateur</h3>
                 </div>
                 <div class="card-text">
                     {{-- Formulaire Création Visiteur --}}
@@ -39,10 +39,11 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="card-title">Attribution d'un Poste</div>
+                <div class="card-title"><h3>Attribution d'un Poste</h3></div>
                     <div class="card-text">
-                        Body panel
+                        Liste visiteurs
                         <form method="post" action="{{ route('computerassignment') }}">
+
                             {{-- inclure csrf_field pour éviter les erreurs liées au csrf --}}
                             {!! csrf_field() !!}
                             <div class="form-row">
@@ -106,10 +107,9 @@
         <div class="card col-md-6">
             <div class="card-body">
                 <div class="card-title">
-                    droite
+                    Liste des attributions
                 </div>
                 <div class="card-text">
-                    Body panel
                     <table class="table">
                         <thead>
                             <tr>
