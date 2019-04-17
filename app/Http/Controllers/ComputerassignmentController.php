@@ -26,57 +26,55 @@ class ComputerassignmentController extends Controller
      */
     public function create(Request $request){
 
-        
+        $input = $request->all();
+
+        //retire le "H" de l'heure
+        $hours_trimmed = str_replace("h", "", $input['hours']);
+
+        //formatage heure de début+temps d'attribution
+        $range_hours = $input['range_hours'];
+        if($range_hours >= 240){
+            $range_hours = $range_hours - 240;
+            $range_hours = $range_hours+400;
+        }elseif($range_hours >= 180){
+            $range_hours = $range_hours - 180;
+            $range_hours = $range_hours+300;
+        }elseif($range_hours >= 120){
+            $range_hours = $range_hours - 120;
+            $range_hours = $range_hours+200;
+        }elseif($range_hours >= 60){
+            $range_hours = $range_hours - 60;
+            $range_hours = $range_hours+100;
+        }
+
+        //additionne l'heure de début+temps d'attribution
+        $finish_hours = $hours_trimmed + $range_hours;
 
         //verifie la disponibilité du crénaux horaire choisie
-        $all_computerassignment = $this->all_assignment();
+        $all_computerassignment = Computerassignment::all();
 
         // var_dump($all_computerassignment);
         if (isset($all_computerassignment)){
             foreach($all_computerassignment as $key=>$computerassignment){
 
-                $input = $request->all();
+                //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
+                if($finish_hours < $computerassignment->open) {
 
-            //retire le "H" de l'heure
-            $hours_trimmed = str_replace("h", "", $input['hours']);
+                    if($finish_hours > $computerassignment->close){
 
-            //formatage heure de début+temps d'attribution
-            $range_hours = $input['range_hours'];
-            if($range_hours >= 240){
-                $range_hours = $range_hours - 240;
-                $range_hours = $range_hours+400;
-            }elseif($range_hours >= 180){
-                $range_hours = $range_hours - 180;
-                $range_hours = $range_hours+300;
-            }elseif($range_hours >= 120){
-                $range_hours = $range_hours - 120;
-                $range_hours = $range_hours+200;
-            }elseif($range_hours >= 60){
-                $range_hours = $range_hours - 60;
-                $range_hours = $range_hours+100;
-            }
+                    $assignment = new Computerassignment();
+                    $assignment ->visitor_id = $input['id_visitor'];
+                    $assignment ->computer_id = $input['id_computer'];
+                    $assignment ->open = $hours_trimmed;
+                    $assignment ->close = $finish_hours;
 
-        //additionne l'heure de début+temps d'attribution
-        $finish_hours = $hours_trimmed + $range_hours;
+                    //enregistrement dans la DB
+                    $assignment ->save();
 
-            //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
-            if($finish_hours < $computerassignment->open) {
-
-                if($finish_hours > $computerassignment->close){
-
-                $assignment = new Computerassignment();
-                $assignment ->visitor_id = $input['id_visitor'];
-                $assignment ->computer_id = $input['id_computer'];
-                $assignment ->open = $hours_trimmed;
-                $assignment ->close = $finish_hours;
-
-                //enregistrement dans la DB
-                $assignment ->save();
-
-                return redirect()->route('all_assignment');
-                
+                    return redirect()->route('all_assignment');
+                    
+                    }
                 }
-            }
 
             }
             return redirect()->route('all_assignment');
