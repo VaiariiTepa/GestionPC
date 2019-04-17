@@ -6,12 +6,12 @@
 
     <div class="row">
         {{-- row Gauche --}}
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+        <div class="card col-md-6">
+            <div class="card-body">
+                <div class="card-title">
                     Créer un nouvelle utilisateur
                 </div>
-                <div class="panel-body">
+                <div class="card-text">
                     {{-- Formulaire Création Visiteur --}}
                     <form method="post" action="{{ route('create_user') }}">
                             {!! csrf_field() !!}
