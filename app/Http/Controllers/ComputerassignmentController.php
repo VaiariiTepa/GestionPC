@@ -51,7 +51,7 @@ class ComputerassignmentController extends Controller
         $finish_hours = $hours_trimmed + $range_hours;
 
         //verifie la disponibilité du crénaux horaire choisie
-        $all_computerassignment = Computerassignment::all();
+        $all_computerassignment = $this->all_assignment();
 
         // var_dump($all_computerassignment);
         if (isset($all_computerassignment)){
