@@ -11,7 +11,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <title>{{ config('app.name', 'Centre culturel') }}</title>
+    <title>Centre culturel</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
