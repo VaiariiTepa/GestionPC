@@ -132,7 +132,7 @@ class ComputerassignmentController extends Controller
         $all_computer = Computer::all();
         $computerassignment = $this->all_assignment();
 
-        return view('home')->with([
+        return redirect()->route('home')->with([
             'computerassignment'=>$computerassignment,
             'visitor'=>$all_visitor,
             'computer'=>$all_computer,
