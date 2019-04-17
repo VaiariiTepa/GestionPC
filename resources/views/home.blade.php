@@ -24,12 +24,12 @@
                                 <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Nom">
                             </div>
                             <div class="form-group col-md-4">
-                                <input type="text" class="form-control" name="numberphone" id="numberphone" placeholder="numéros téléphone">
+                                <input type="text" class="form-control" name="numberphone" id="numberphone" placeholder="Téléphone">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="email">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                             </div>
                             <div class="form-group col-md-4">
                                 <button type="submit" class="btn btn-primary">Valider</button>
