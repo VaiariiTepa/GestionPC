@@ -35,12 +35,9 @@ class HomeController extends Controller
         $computer = new Computer();
         $c = $computer->all();
 
-        $computerassignment = Route::get('ComputerassignmentController@all_assignment');
-
         return view('home')->with([
             'visitor'=>$v,
             'computer'=>$c,
-            'computerassignment'=>$computerassignment,
             ]);
 
     }
