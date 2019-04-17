@@ -132,10 +132,16 @@
                                             {{$ca->ref}}
                                         </td>
                                         <td>
-                                            {{substr($ca->open,0,-2)}}h
+                                            {{substr($ca->open,0,-2)}}h{{substr($ca->open,-2)}}
                                         </td>
                                         <td>
-                                            {{$ca->close}}
+                                            @if (substr($ca->close,-2) == 60)
+                                                {{$hours = substr($ca->close,0,-2) + 1}}
+                                                {{$minute = substr($ca->close,-2) = 00}}
+                                                {{$hours}}h{{$minute}}
+                                            @else
+                                            {{substr($ca->close,0,-2)}}h{{substr($ca->close,-2)}}
+                                            @endif
                                         </td>
                                         <td>
                                             <input type="submit" class="btn btn-warning" value="annuler">
