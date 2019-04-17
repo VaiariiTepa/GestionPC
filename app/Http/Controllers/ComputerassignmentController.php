@@ -57,25 +57,24 @@ class ComputerassignmentController extends Controller
         if (isset($all_computerassignment)) {
             foreach($all_computerassignment as $computerassignment){
 
-
-
                 //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
-                if (($finish_hours < $computerassignment->open)&&($finish_hours > $computerassignment->close)) {
+                if ($finish_hours < $computerassignment->open) {
+                    if ($finish_hours > $computerassignment->close) {
+                        $assignment = new Computerassignment();
+                        $assignment ->visitor_id = $input['id_visitor'];
+                        $assignment ->computer_id = $input['id_computer'];
+                        $assignment ->open = $hours_trimmed;
+                        $assignment ->close = $finish_hours;
 
-                    $assignment = new Computerassignment();
-                    $assignment ->visitor_id = $input['id_visitor'];
-                    $assignment ->computer_id = $input['id_computer'];
-                    $assignment ->open = $hours_trimmed;
-                    $assignment ->close = $finish_hours;
+                        //enregistrement dans la DB
+                        $assignment ->save();
 
-                    //enregistrement dans la DB
-                    $assignment ->save();
+                        return redirect()->route('all_assignment');
+                    }
 
-                    return redirect()->route('all_assignment');
                 }
 
             }
-
 
         }
         return redirect()->route('all_assignment');
