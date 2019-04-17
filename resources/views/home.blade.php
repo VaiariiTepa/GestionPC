@@ -131,7 +131,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($computerassignment)
+                            @if (isset($computerassignment))
                                 @foreach ($computerassignment as $ca)
                                     <tr>
                                         <td>
