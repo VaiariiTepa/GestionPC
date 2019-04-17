@@ -131,11 +131,17 @@
                                         <td>
                                             {{$ca->ref}}
                                         </td>
+
+                                        {{-- Formatage de l'heure de début --}}
                                         <td>
                                             {{substr($ca->open,0,-2)}}h{{substr($ca->open,-2)}}
                                         </td>
+
+                                        {{-- Formatage de l'heure de fin --}}
                                         <td>
                                             @if (substr($ca->close,-2) == 60)
+
+                                                {{-- Dissimuler formatage heures dans INPUT(hidden) --}}
                                                 <input type="hidden" value="
                                                 {{$hours = substr($ca->close,0,-2)}}
                                                 {{$hours = $hours+1}}
@@ -148,7 +154,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="home/{{$ca->id}}/delete" button class="btn btn-danger btn-small btn-delete">Annuler</a>
+                                            <a href="{{$ca->id}}/cancel" button class="btn btn-danger btn-small btn-delete">Annuler</a>
                                         </td>
                                     </tr>
                                 @endforeach
