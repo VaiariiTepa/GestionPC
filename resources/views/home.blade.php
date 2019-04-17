@@ -132,7 +132,7 @@
                                             {{$ca->ref}}
                                         </td>
                                         <td>
-                                            {{substr($ca->open,0,-2).'h'.substr($ca->open)}}
+                                            {{substr($ca->open,0,-2).'h'.}}
                                         </td>
                                         <td>
                                             {{$ca->close}}
