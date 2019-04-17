@@ -23,5 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'VisitorController@create')->name('create_user');
 Route::post('/home/computerassignment', 'ComputerassignmentController@create')->name('computerassignment');
 Route::get('/home/all_assignment', 'ComputerassignmentController@all_assignment')->name('all_assignment');
+
 //Ajax
 Route::post('/home/id_computer', 'ComputerassignmentController@get_hours');
+
