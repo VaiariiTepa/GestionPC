@@ -58,9 +58,9 @@ class ComputerassignmentController extends Controller
             // foreach($all_computerassignment as $computerassignment){
 
                 //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
-                if($finish_hours < $all_computerassignment->open) {
+                if($finish_hours < $all_computerassignment['open']) {
 
-                    if($finish_hours > $all_computerassignment->open){
+                    if($finish_hours > $all_computerassignment['close']){
 
                     $assignment = new Computerassignment();
                     $assignment ->visitor_id = $input['id_visitor'];
