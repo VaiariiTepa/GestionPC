@@ -54,13 +54,13 @@ class ComputerassignmentController extends Controller
         $all_computerassignment = Computerassignment::all();
 
         // var_dump($all_computerassignment);
-        if (isset($all_computerassignment)) {
+        if (isset($all_computerassignment)){
             foreach($all_computerassignment as $computerassignment){
 
-
-
                 //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
-                if (($finish_hours < $computerassignment->open)&&($finish_hours > $computerassignment->close)) {
+                if($finish_hours > $computerassignment->open) {
+                    
+                    if($finish_hours < $computerassignment->close){
 
                     $assignment = new Computerassignment();
                     $assignment ->visitor_id = $input['id_visitor'];
@@ -72,13 +72,12 @@ class ComputerassignmentController extends Controller
                     $assignment ->save();
 
                     return redirect()->route('all_assignment');
+                    }
                 }
 
             }
-
-
+            return redirect()->route('all_assignment');
         }
-        return redirect()->route('all_assignment');
     }
 
 
