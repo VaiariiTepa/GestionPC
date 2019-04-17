@@ -35,7 +35,6 @@ class HomeController extends Controller
         return view('home')->with([
             'visitor'=>$v,
             'computer'=>$c,
-            'computerassignment'=>$computerassignment,
             ]);
 
     }
