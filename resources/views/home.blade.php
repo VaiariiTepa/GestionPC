@@ -131,7 +131,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($computeassignment as $ca)
+                            @foreach ($computerassignment as $ca)
                                 <tr>
                                     <td>
                                         {{$ca->firstname}}
