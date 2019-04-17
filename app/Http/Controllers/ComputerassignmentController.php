@@ -51,16 +51,21 @@ class ComputerassignmentController extends Controller
         $finish_hours = $hours_trimmed + $range_hours;
 
         //verifie la disponibilité du crénaux horaire choisie
-        $all_computerassignment = Computerassignment::all();
+        // $all_computerassignment = Computerassignment::all();
 
         // var_dump($all_computerassignment);
-        if (isset($all_computerassignment)){
-            foreach($all_computerassignment as $key=>$computerassignment){
-                return redirect()->route('all_assignment');
+        // if (isset($all_computerassignment)){
+            // foreach($all_computerassignment as $key=>$computerassignment){
+                
                 //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
-                if($finish_hours < $computerassignment->open) {
-
-                    if($finish_hours > $computerassignment->close){
+                // if(($finish_hours > $computerassignment->open)&&($finish_hours < $computerassignment->close)){
+                    //SI hd==debut
+                    //SI > debut ET < fin
+                        //redirect "HOME"
+                    //SI =< debut ET > fin
+                    //SI !== debut ET < fin
+                        //enregistré + redirect
+                    
 
                     $assignment = new Computerassignment();
                     $assignment ->visitor_id = $input['id_visitor'];
@@ -73,12 +78,12 @@ class ComputerassignmentController extends Controller
 
                     return redirect()->route('all_assignment');
                     
-                    }
-                }
+                    
+                // }
 
-            }
+            // }
             
-        }
+        // }
     }
 
 
