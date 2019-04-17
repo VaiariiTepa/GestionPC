@@ -38,10 +38,11 @@
                     </form>
                 </div>
             </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Attribution d'un Poste</div>
-                    <div class="panel-body">
+        </div>
+        <div class="card col-md-6">
+            <div class="card-body">
+                <div class="card-title">Attribution d'un Poste</div>
+                    <div class="card-text">
                         Body panel
                         <form method="post" action="{{ route('computerassignment') }}">
                             {!! csrf_field() !!}
