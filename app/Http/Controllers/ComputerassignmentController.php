@@ -77,7 +77,7 @@ class ComputerassignmentController extends Controller
                 }
 
             }
-            return redirect()->route('all_assignment');
+            // return redirect()->route('all_assignment');
         }
     }
 
