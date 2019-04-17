@@ -72,7 +72,7 @@ class ComputerassignmentController extends Controller
                     $assignment ->save();
 
                     return redirect()->route('all_assignment');
-                    break;
+                    
                     }
                 }
 
