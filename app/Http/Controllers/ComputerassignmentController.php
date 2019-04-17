@@ -104,7 +104,7 @@ class ComputerassignmentController extends Controller
 
                                 ->get();
 
-        return $computerassignment;
+        return redirect()->route('home');
     }
 
 }
