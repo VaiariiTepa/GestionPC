@@ -110,7 +110,7 @@
                 </div>
                 <div class="card-text">
                     Body panel
-                    <table>
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>prenom</th><th>nom</th><th>ref_ordi</th>
