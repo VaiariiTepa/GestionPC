@@ -136,11 +136,10 @@
                                         </td>
                                         <td>
                                             @if (substr($ca->close,-2) == 60)
-                                                {{$hours = substr($ca->close,0,-2)
-                                                $hours = $hours+1
-                                                $minute = substr($ca->close,-2)
-                                                $minute = 00
-                                                }}
+                                                {{$hours = substr($ca->close,0,-2)}}
+                                                {{$hours = $hours+1}}
+                                                {{$minute = substr($ca->close,-2)}}
+                                                {{$minute = 00}}
                                                 {{$hours}}h{{$minute}}
                                             @else
                                             {{substr($ca->close,0,-2)}}h{{substr($ca->close,-2)}}
