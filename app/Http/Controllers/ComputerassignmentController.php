@@ -53,26 +53,32 @@ class ComputerassignmentController extends Controller
         //verifie la disponibilité du crénaux horaire choisie
         $all_computerassignment = Computerassignment::all();
 
-        foreach($all_computerassignment as $computerassignment){
-            var_dump($computerassignment);
+        // var_dump($all_computerassignment);
+        if (isset($all_computerassignment)) {
+            foreach($all_computerassignment as $computerassignment){
 
-            //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
-            if (($finish_hours < $computerassignment->open)&&($finish_hours > $computerassignment->close)) {
 
-                $assignment = new Computerassignment();
-                $assignment ->visitor_id = $input['id_visitor'];
-                $assignment ->computer_id = $input['id_computer'];
-                $assignment ->open = $hours_trimmed;
-                $assignment ->close = $finish_hours;
 
-                //enregistrement dans la DB
-                $assignment ->save();
+                //SI '<' a l'heure début ET '>' a l'heure fin, ALORS enregistré
+                if (($finish_hours < $computerassignment->open)&&($finish_hours > $computerassignment->close)) {
 
-                return redirect()->route('all_assignment');
-            }else {
-                return redirect()->route('all_assignment');
+                    $assignment = new Computerassignment();
+                    $assignment ->visitor_id = $input['id_visitor'];
+                    $assignment ->computer_id = $input['id_computer'];
+                    $assignment ->open = $hours_trimmed;
+                    $assignment ->close = $finish_hours;
+
+                    //enregistrement dans la DB
+                    $assignment ->save();
+
+                    return redirect()->route('all_assignment');
+                }
+
             }
+
+
         }
+        return redirect()->route('all_assignment');
     }
 
 
