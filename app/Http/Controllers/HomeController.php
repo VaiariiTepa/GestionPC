@@ -17,12 +17,22 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        //récupère les utilisateurs
+        $visitor = new Visitor();
+        $v = $visitor->all();
+
+        //récupère les ordinateur
+        $computer = new Computer();
+        $c = $computer->all();
+
+        return view('home')->with([
+            'visitor'=>$v,
+            'computer'=>$c,
+            ]);
     }
+
 }
