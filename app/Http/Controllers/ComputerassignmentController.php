@@ -93,7 +93,7 @@ class ComputerassignmentController extends Controller
     /**
      * Récupère les attribution d'ordinateur
      */
-    public function all_assignement(){
+    public function all_assignment(){
 
         $computerassignment = Computerassignment::select('visitors.id as visitor_id','visitors.firstname',
                                 'visitors.lastname','visitors.number','visitors.email',
