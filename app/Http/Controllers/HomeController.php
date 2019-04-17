@@ -32,7 +32,7 @@ class HomeController extends Controller
         $computer = new Computer();
         $c = $computer->all();
 
-        $computerassignment = Route::get('ComputerassignmentController@all_assignment');
+        $computerassignment = Route::get('all_assignment');
 
         //récupère les assignment
         $computerassignment = Computerassignment::all_assignment();
