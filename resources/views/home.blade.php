@@ -107,9 +107,6 @@
             <div class="card-body">
                 <div class="card-title">
                     droite
-                    <div>
-                        <a href="{{ route('all_assignment') }}"><input type="button" value="rafraîchir"></a>
-                    </div>
                 </div>
                 <div class="card-text">
                     Body panel
@@ -135,7 +132,7 @@
                                             {{$ca->ref}}
                                         </td>
                                         <td>
-                                            {{$ca->open}}
+                                            {{substr($ca->open,0,-2).'h'.substr($ca->open)}}
                                         </td>
                                         <td>
                                             {{$ca->close}}
