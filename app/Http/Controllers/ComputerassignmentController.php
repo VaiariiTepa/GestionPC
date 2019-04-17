@@ -100,8 +100,9 @@ class ComputerassignmentController extends Controller
     public function all_assignment(){
 
         $computerassignment = Computerassignment::select('visitors.id as visitor_id','visitors.firstname',
-                                'visitors.lastname','visitors.number','visitors.email',
-                                'computers.ref','computers.id as computer_id','computerassignments.open','computerassignments.close')
+                                'visitors.lastname','visitors.number','visitors.email','computers.ref',
+                                'computers.id as computer_id','computerassignments.open','computerassignments.close',
+                                'computerassignment.id')
                                 ->join('visitors', 'visitors.id', '=', 'computerassignments.visitor_id')
 
                                 ->join('computers', 'computers.id', '=', 'computerassignments.computer_id')
