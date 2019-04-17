@@ -50,14 +50,22 @@
                                     <div class="form-group col-md-6">
                                         {{-- affichage des visiteurs  --}}
                                         <select  name="id_visitor">
-
-
-
+                                            @foreach ($visitor as $v)
+                                                <option value="{{$v->id}}">
+                                                    {{$v->firstname}} {{$v->lastname}}
+                                                </option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        {{-- Attribution Ordinateur --}}
-
+                                        {{-- affichage Ordinateur --}}
+                                        <select name="id_computer" id="id_computer">
+                                            @foreach ($computer as $c)
+                                                <option value="{{$c->ref}}">
+                                                    {{$c->ref}}
+                                                </option>
+                                            @endforeach
+                                        </select>
 
 
                                     </div>
@@ -117,12 +125,34 @@
                                 <th>
                                     fin
                                 </th>
+                                <th>
+                                    action
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-
-                            </tr>
+                            @foreach ($computeassignment as $ca)
+                                <tr>
+                                    <td>
+                                        {{$ca->firstname}}
+                                    </td>
+                                    <td>
+                                        {{$ca->lastname}}
+                                    </td>
+                                    <td>
+                                        {{$ca->ref}}
+                                    </td>
+                                    <td>
+                                        {{$ca->open}}
+                                    </td>
+                                    <td>
+                                        {{$ca->close}}
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="annuler">
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
