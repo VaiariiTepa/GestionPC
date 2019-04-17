@@ -158,8 +158,8 @@
 
             //affiche le temps selectionner
             function screen_range_hours(range_hours){
+                $('#screen_range_hours').remove();
                 if(range_hours < 60){
-                    // $('#screen_range_hours').remove();
 
                     $('#screen_range_hours').append('<input type="hidden" id="hidden_range_hours" name="range_hours" value="'+range_hours+'">');
                     $('#screen_range_hours').append('<h4><p id="screener_range_hours">'+range_hours+'min</p></h4>');
