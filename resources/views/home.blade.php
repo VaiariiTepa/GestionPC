@@ -99,7 +99,7 @@
         </div>
 
         {{-- èspace entre GAUCHE/DROITE --}}
-        <div class="card col-md-1">
+        <div class="col-md-1">
         </div>
 
         {{-- row Droite --}}
