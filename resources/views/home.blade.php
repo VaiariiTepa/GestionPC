@@ -9,7 +9,7 @@
         <div class="card col-md-5">
             <div class="card-body">
                 <div class="card-title">
-                    <h3>Créer un nouvelle utilisateur</h3>
+                    <h3>Créer un visiteur</h3>
                 </div>
                 <div class="card-text">
                     {{-- Formulaire Création Visiteur --}}
@@ -32,16 +32,16 @@
                                 <input type="email" class="form-control" name="email" id="email" placeholder="email">
                             </div>
                             <div class="form-group col-md-4">
-                                <button type="submit" class="btn btn-primary">Créer Utilisateur</button>
+                                <button type="submit" class="btn btn-primary">Valider</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="card-body">
-                <div class="card-title"><h3>Attribution d'un Poste</h3></div>
+                <div class="card-title"><h3>Attribuer un ordinateur</h3></div>
                     <div class="card-text">
-                        Liste visiteurs
+                        Visiteurs
                         <form method="post" action="{{ route('computerassignment') }}">
 
                             {{-- inclure csrf_field pour éviter les erreurs liées au csrf --}}
@@ -61,6 +61,7 @@
 
                                 {{-- affichage Ordinateur --}}
                                 <div class="form-group col-md-6">
+                                    ref_ordi
                                     <select name="id_computer" id="id_computer">
                                         @foreach ($computer as $c)
                                             <option value="{{$c->id}}">
