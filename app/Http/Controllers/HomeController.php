@@ -35,9 +35,13 @@ class HomeController extends Controller
         $computer = new Computer();
         $c = $computer->all();
 
+        //récupère les assignment
+        $computerassignment = new Computerassignment();
+        $computerassignment->all_assignment();
         return view('home')->with([
             'visitor'=>$v,
             'computer'=>$c,
+            'computerassignment'=>$computerassignment,
             ]);
     }
 
