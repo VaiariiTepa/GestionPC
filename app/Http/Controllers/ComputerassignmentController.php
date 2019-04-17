@@ -105,7 +105,7 @@ class ComputerassignmentController extends Controller
                                 ->get();
 
 
-        $all_visior = Visitor::all();
+        $all_visitor = Visitor::all();
         $all_computer = Computer::all();
 
         return view('home')->with([
