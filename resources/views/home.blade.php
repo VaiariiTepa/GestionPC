@@ -131,6 +131,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{dd($computerassignment)}}
                             @if (isset($computerassignment))
                                 @foreach ($computerassignment as $ca)
                                     <tr>
